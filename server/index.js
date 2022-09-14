@@ -38,18 +38,18 @@ app.use("/api/Order", RouterOrder);
 app.use("/api/news", Routernews);
 app.use("/api/countOrMonth", RouterCountOrMonth);
 
-app.get("/image/:id", (req, res) => {
+app.get("/api/image/:id", (req, res) => {
     res.sendFile(path.join(__dirname, `/public/upload/${req.params.id}`));
 });
-app.get("/image/procuct/:id", (req, res) => {
+app.get("/api/image/procuct/:id", (req, res) => {
     res.sendFile(
         path.join(__dirname, `/public/upload/Product/${req.params.id}`)
     );
 });
-app.get("/image/news/:id", (req, res) => {
+app.get("/api/image/news/:id", (req, res) => {
     res.sendFile(path.join(__dirname, `/public/upload/news/${req.params.id}`));
 });
 
 app.listen(process.env.PORT, () =>
-    console.log("Máy chủ đã chạy tại công 8080")
+    console.log("Máy chủ đã chạy tại công " + process.env.PORT)
 );

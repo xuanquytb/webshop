@@ -6,7 +6,7 @@ const RoleModel = function (role) {
 };
 
 const find_all_Role = function () {
-    dbCon.query("SELECT * FROM Role", function (err, role) {
+    dbCon.query("SELECT * FROM role", function (err, role) {
         if (err) {
             result(null);
             return;
@@ -18,7 +18,7 @@ const find_all_Role = function () {
 const find_by_id_role = function (id) {
     return new Promise(function (resolve, reject) {
         dbCon.query(
-            "SELECT * FROM Role where id = ?",
+            "SELECT * FROM role where id = ?",
             id,
             function (err, role) {
                 if (err || role.length === 0) {
